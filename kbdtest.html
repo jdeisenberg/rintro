@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="rstyle.css"/>
+<script language="JavaScript1.1" src="kbd.js"></script>
+<script>
+var	validMap = new Array (1, 5, 6, 15, 16, 20, 25, 31, -20, -999);
+
+function entered()
+{
+	alert("Entered");
+}
+
+</script>
+
+<body onLoad = "setInput(5)" onUnload = "cleanupInput()">
+     
+<p>
+<img src="pics/kcap.png" width="372" height="101" usemap="#kcap" border="0">
+<form>
+<input type="button" value="Clear" onClick="clearInput(5)">
+</form>
+<p>
+<form name="debugform">
+<input type="text" name="debug" size="50">
+</form>
+
+<map name="kcap">
+<area shape="rect" coords="0,0,20,20" href="javascript:kclick(27)">
+<area shape="rect" coords="220,0,240,20" href="javascript:kclick(30)">
+<area shape="rect" coords="240,0,260,20" href="javascript:kclick(28)">
+<area shape="rect" coords="260,0,300,20" href="javascript:bksp()">
+
+<area shape="rect" coords="30,20,50,40" href="javascript:kclick(33)">
+<area shape="rect" coords="50,20,70,40" href="javascript:kclick(26)">
+<area shape="rect" coords="70,20,90,40" href="javascript:kclick(6)">
+<area shape="rect" coords="90,20,110,40" href="javascript:kclick(18)">
+<area shape="rect" coords="110,20,130,40" href="javascript:kclick(20)">
+<area shape="rect" coords="130,20,150,40" href="javascript:kclick(29)">
+<area shape="rect" coords="150,20,170,40" href="javascript:kclick(21)">
+<area shape="rect" coords="170,20,190,40" href="javascript:kclick(10)">
+<area shape="rect" coords="190,20,210,40" href="javascript:kclick(16)">
+<area shape="rect" coords="210,20,230,40" href="javascript:kclick(17)">
+<area shape="rect" coords="230,20,250,40" href="javascript:kclick(32)">
+<area shape="rect" coords="250,20,270,40" href="javascript:kclick(8)">
+<area shape="rect" coords="270,20,300,40" href="javascript:kclick(31)">
+
+<area shape="rect" coords="35,40,55,60" href="javascript:kclick(1)">
+<area shape="rect" coords="55,40,75,60" href="javascript:kclick(19)">
+<area shape="rect" coords="75,40,95,60" href="javascript:kclick(5)">
+<area shape="rect" coords="95,40,115,60" href="javascript:kclick(22)">
+<area shape="rect" coords="115,40,135,60" href="javascript:kclick(4)">
+<area shape="rect" coords="135,40,155,60" href="javascript:kclick(25)">
+<area shape="rect" coords="155,40,175,60" href="javascript:kclick(11)">
+<area shape="rect" coords="175,40,195,60" href="javascript:kclick(12)">
+<area shape="rect" coords="195,40,215,60" href="javascript:kclick(13)">
+<area shape="rect" coords="235,40,255,60" href="javascript:kclick(7)">
+<area shape="rect" coords="255,40,300,60" href="javascript:entered()">
+
+<area shape="rect" coords="45,60,65,80" href="javascript:kclick(9)">
+<area shape="rect" coords="65,60,85,80" href="javascript:kclick(23)">
+<area shape="rect" coords="85,60,105,80" href="javascript:kclick(24)">
+<area shape="rect" coords="105,60,125,80" href="javascript:kclick(3)">
+<area shape="rect" coords="125,60,145,80" href="javascript:kclick(2)">
+<area shape="rect" coords="145,60,165,80" href="javascript:kclick(15)">
+<area shape="rect" coords="165,60,185,80" href="javascript:kclick(14)">
+<area shape="rect" coords="185,60,205,80" href="javascript:kclick(-44)">
+<area shape="rect" coords="205,60,225,80" href="javascript:kclick(-46)">
+
+<area shape="rect" coords="85,80,215,100" href="javascript:kclick(-20)">
+
+<area shape="rect" coords="309,0,329,20" href="javascript:kclick(31)">
+<area shape="rect" coords="351,0,371,20" href="javascript:kclick(31)">
+<area shape="rect" coords="309,24,329,44" href="javascript:kclick(32)">
+<area shape="rect" coords="351,24,371,44" href="javascript:kclick(32)">
+<area shape="rect" coords="309,48,329,68" href="javascript:kclick(8)">
+<area shape="rect" coords="351,48,371,68" href="javascript:kclick(8)">
+<area shape="rect" coords="309,72,329,92" href="javascript:kclick(27)">
+<area shape="rect" coords="351,72,371,92" href="javascript:kclick(27)">
+
+</map>

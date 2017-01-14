@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="rstyle.css"/>
+<title>Review Exercise 2</title>
+<script>
+
+var validKeys = 'erto\\asdghkcbnm ';
+var russKeys =  'ертоэасдгчкцбнм ';
+var nextPageURL = "summary2.html";
+var prob;
+var maxProb;
+var nTries;
+var answered;
+var engWord = [
+  "theater (for plays)", "movie theater", "bank", "bar", "downtown",
+  "hotel", "cashier", "coatroom",
+  "yes", "no", "where", "Where is the subway?",
+  "what", "window", "What is this?",
+  "check (bill; receipt)"];
+ 
+var russWord = ["театр", "кино", "банк", "бар", "центр",
+                "гостиница", "касса", "гардероб",
+                "да", "нет", "где", "где метро", "что", "окно",
+                "что ето", "чек"];
+
+var displayWord = ["теа&#x301;тр", "кино&#x301;", "банк", "бар", "центр",
+                "гости&#x301;ница", "ка&#x301;сса", "гардеро&#x301;б",
+                "да", "нет", "где", "Где метро&#x301;", "что", "окно&#x301;",
+                "Что е&#x301;то","чек"];
+</script>
+<script type="text/javascript" src="exercise.js"></script>
+<script type="text/javascript" src="kbd.js"></script>
+
+<body onLoad = "startExercise()">
+<h2>Review Quiz 2</h2>
+<form name="exercise">
+<p>Translate: <span id="english">&nbsp;</span></p>
+<table>
+<tr><td> Russian:</td>
+<td><input id="russian" class="big" type="text" size="40" maxlength="10" autocomplete="off"/></td></tr>
+<tr><td> &nbsp; </td>
+<td><span id="correct" class="big" style="color:red">&nbsp;</span></td></tr>
+</table>
+<table>
+<tr>
+<td>
+<img src="pics/kcap2.png" width="372" height="101" usemap="#kcap" border="0" />
+</td>
+<td width="10"></td>
+<td>
+<img src="pics/mt3.png" name="feedbackpic" width="90" height="30" />
+<p>
+<input type="button" value="Clear Input" onclick="clearInput()" />
+</td>
+</tr>
+</table>
+<p>Feedback: <span id="feedback"></span></p>
+<p>
+Problem <span id="prob">&nbsp;</span> of
+<span id="maxProb">&nbsp;</span></p>
+<p>
+<input type="button" value="Check Answer" onclick="entered();" />
+<input type="button" value="Show Answer" onclick="showAnswer();" />
+<input type="button" value="Next Problem" onclick="nextProblem();" />
+</p>
+</form>
+<hr />
+Above you see an English word or phrase. Enter the corresponding Russian word
+or phrase. Don't worry about accent marks, capital letters, periods, or question marks.
+<p>
+You may click the picture of the keyboard to enter letters.
+</p>
+<hr />
+<!-- navigation -->
+<table border="0" width="100%">
+<tr>
+<td class="back"> &nbsp;<a href="loc2.html">&larr; More Places</a>
+</td>
+<td class="up">
+<a href="toc.html">&uarr; Index</a>
+</td>
+<td class="next">
+<a href="summary2.html">Summary 2 &rarr;</a>
+</td>
+</tr>
+</table>
+
+<map name="kcap">
+<area shape="rect" coords="0,0,20,20" href="#" id="k27" onclick="return kclick(event)" />
+<area shape="rect" coords="220,0,240,20" href="#" id="k30" onclick="return kclick(event)" />
+<area shape="rect" coords="240,0,260,20" href="#" id="k28" onclick="return kclick(event)" />
+<area shape="rect" coords="260,0,300,20" href="#" id="bksp" onclick="return kclick(event)" />
+
+<area shape="rect" coords="30,20,50,40" href="#" id="k33" onclick="return kclick(event)" />
+<area shape="rect" coords="50,20,70,40" href="#" id="k26" onclick="return kclick(event)" />
+<area shape="rect" coords="70,20,90,40" href="#" id="k6" onclick="return kclick(event)" />
+<area shape="rect" coords="90,20,110,40" href="#" id="k18" onclick="return kclick(event)" />
+<area shape="rect" coords="110,20,130,40" href="#" id="k20" onclick="return kclick(event)" />
+<area shape="rect" coords="130,20,150,40" href="#" id="k29" onclick="return kclick(event)" />
+<area shape="rect" coords="150,20,170,40" href="#" id="k21" onclick="return kclick(event)" />
+<area shape="rect" coords="170,20,190,40" href="#" id="k10" onclick="return kclick(event)" />
+<area shape="rect" coords="190,20,210,40" href="#" id="k16" onclick="return kclick(event)" />
+<area shape="rect" coords="210,20,230,40" href="#" id="k17" onclick="return kclick(event)" />
+<area shape="rect" coords="230,20,250,40" href="#" id="k32" onclick="return kclick(event)" />
+<area shape="rect" coords="250,20,270,40" href="#" id="k8" onclick="return kclick(event)" />
+<area shape="rect" coords="270,20,300,40" href="#" id="k31" onclick="return kclick(event)" />
+
+<area shape="rect" coords="35,40,55,60" href="#" id="k1" onclick="return kclick(event)" />
+<area shape="rect" coords="55,40,75,60" href="#" id="k19" onclick="return kclick(event)" />
+<area shape="rect" coords="75,40,95,60" href="#" id="k5" onclick="return kclick(event)" />
+<area shape="rect" coords="95,40,115,60" href="#" id="k22" onclick="return kclick(event)" />
+<area shape="rect" coords="115,40,135,60" href="#" id="k4" onclick="return kclick(event)" />
+<area shape="rect" coords="135,40,155,60" href="#" id="k25" onclick="return kclick(event)" />
+<area shape="rect" coords="155,40,175,60" href="#" id="k11" onclick="return kclick(event)" />
+<area shape="rect" coords="175,40,195,60" href="#" id="k12" onclick="return kclick(event)" />
+<area shape="rect" coords="195,40,215,60" href="#" id="k13" onclick="return kclick(event)" />
+<area shape="rect" coords="235,40,255,60" href="#" id="k7" onclick="return kclick(event)" />
+<area shape="rect" coords="255,40,300,60" href="#" id="entered" onclick="return kclick(event)" />
+
+<area shape="rect" coords="45,60,65,80" href="#" id="k9" onclick="return kclick(event)" />
+<area shape="rect" coords="65,60,85,80" href="#" id="k23" onclick="return kclick(event)" />
+<area shape="rect" coords="85,60,105,80" href="#" id="k24" onclick="return kclick(event)" />
+<area shape="rect" coords="105,60,125,80" href="#" id="k3" onclick="return kclick(event)" />
+<area shape="rect" coords="125,60,145,80" href="#" id="k2" onclick="return kclick(event)" />
+<area shape="rect" coords="145,60,165,80" href="#" id="k15" onclick="return kclick(event)" />
+<area shape="rect" coords="165,60,185,80" href="#" id="k14" onclick="return kclick(event)" />
+<!--
+<area shape="rect" coords="185,60,205,80" href="#" id="k-44" onclick="return kclick(event)" />
+<area shape="rect" coords="205,60,225,80" href="#" id="k-46" onclick="return kclick(event)" />
+-->
+<area shape="rect" coords="85,80,215,100" href="#" id="k-32" onclick="return kclick(event)" />
+
+
+<area shape="rect" coords="309,0,329,20" href="#" id="k31" onclick="return kclick(event)" />
+<area shape="rect" coords="351,0,371,20" href="#" id="k31" onclick="return kclick(event)" />
+<area shape="rect" coords="309,24,329,44" href="#" id="k32" onclick="return kclick(event)" />
+<area shape="rect" coords="351,24,371,44" href="#" id="k32" onclick="return kclick(event)" />
+<area shape="rect" coords="309,48,329,68" href="#" id="k8" onclick="return kclick(event)" />
+<area shape="rect" coords="351,48,371,68" href="#" id="k8" onclick="return kclick(event)" />
+<area shape="rect" coords="309,72,329,92" href="#" id="k27" onclick="return kclick(event)" />
+<area shape="rect" coords="351,72,371,92" href="#" id="k27" onclick="return kclick(event)" />
+</map>
+
+<audio id="sound" src="rsnd/silent.wav"></audio>
+</body>
+
+</html>

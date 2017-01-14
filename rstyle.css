@@ -1,0 +1,78 @@
+p {
+  line-height: 125%;
+}
+
+.center {text-align: center}
+.right {text-align: right}
+
+.indented {
+  margin-left: 3em;
+}
+
+table.center {
+  margin: 0 auto;
+}
+
+span.back {
+  width: 33%;
+  float: left;
+  text-align: left;
+}
+
+span.next {
+  width: 33%;
+  float: left;
+  text-align: right;
+}
+
+span.up {
+  width: 33%;
+  float: left;
+  text-align: center;
+}
+
+nav {
+  display:block;
+  border-top: 1px solid gray;
+  padding-top: 0.25em;
+}
+
+nav a {
+  text-decoration: none;
+}
+
+@font-face {
+  font-family: "Lato Medium";
+  src: local("Lato Medium"),
+       url("Lato-Medium.woff"),
+       url("Lato-Medium.eot"),
+       url("Lato-Medium.ttf");
+}
+
+body {font-family: "Lato Medium"}
+
+img {
+  border: none;
+}
+
+img.speaker {
+  border: none;
+  vertical-align: middle;
+  width: 26px; height: 24px;
+}
+
+img.vmid {
+  vertical-align: middle;
+}
+
+.big {
+  font-size: 26px;
+  font-family: "Lato Medium";
+}
+
+table.bordered {border: 1px solid gray;}
+table.bordered td,
+table.bordered th {
+  border: 1px solid gray; padding: 0.50em;
+}
+
