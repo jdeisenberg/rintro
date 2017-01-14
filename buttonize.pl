@@ -12,6 +12,7 @@ my $buffer;
   close INFILE;
 }
 
+$buffer =~ s/src="playsnd.js"/src="playsnd5.js"/;
 $buffer =~ s!<img\s+src="pics/speaker.png"\s+alt="Play"\s+class="speaker"\s+onclick="playSound\('([^']+)'\)"\s*/>!<button onclick="playSound('\1')"><img src="pics/speaker.png" alt="Play" class="speaker"/></button>!gm;
 
 print $buffer;
